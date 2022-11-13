@@ -2,12 +2,12 @@
   "configs": [
     {
       "data_path": "data/data_full3.zip",
-      "model_name": "first-model-batch",
+      "model_name": "first-model-batch-base",
       "structure": ["l_50_125", "d_0.3", "r", "l_125_125", "d_0.3",  "r", "l_125_150", "d_0.3", "r", "l_150_110", "d_0.3", "r", "l_110_75", "l_75_10", "s_0"],
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
-      "embedding_type": "glove-wiki-gigaword-50-base",
+      "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
         "comedy": 0.0
@@ -46,7 +46,7 @@
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
-      "embedding_type": "glove-wiki-gigaword-50-base",
+      "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
         "comedy": 0.0
@@ -59,7 +59,7 @@
       "lr": 3e-3,
       "epochs": 200,
       "input_dim": 50,
-      "embedding_type": "glove-wiki-gigaword-50-base",
+      "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
         "comedy": 0.0
@@ -72,7 +72,7 @@
       "lr": 3e-2,
       "epochs": 200,
       "input_dim": 50,
-      "embedding_type": "glove-wiki-gigaword-50-base",
+      "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
         "comedy": 0.0
@@ -85,7 +85,7 @@
       "lr": 3e-1,
       "epochs": 200,
       "input_dim": 50,
-      "embedding_type": "glove-wiki-gigaword-50-base",
+      "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
         "comedy": 0.0
@@ -98,7 +98,7 @@
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
-      "embedding_type": "glove-wiki-gigaword-50-base",
+      "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
         "comedy": 0.0
@@ -111,7 +111,7 @@
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
-      "embedding_type": "glove-wiki-gigaword-100-base",
+      "embedding_type": "glove-wiki-gigaword-100",
       "down_sample": {
         "drama": 0.0,
         "comedy": 0.0
@@ -124,7 +124,7 @@
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
-      "embedding_type": "glove-wiki-gigaword-300-base",
+      "embedding_type": "glove-wiki-gigaword-300",
       "down_sample": {
         "drama": 0.0,
         "comedy": 0.0

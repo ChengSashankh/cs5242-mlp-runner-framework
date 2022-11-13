@@ -28,7 +28,8 @@ class Analytics:
         conf_mat = conf_mat * (1.0 / value_range)
 
         # Plot a heat map
-        ax = sns.heatmap(conf_mat, linewidths=0.3, xticklabels=FILMS_GENRE, yticklabels=FILMS_GENRE).set(title=f'Confusion at epoch: {epoch}')
+        ax = sns.heatmap(conf_mat, linewidths=0.3, xticklabels=FILMS_GENRE, yticklabels=FILMS_GENRE)
+        ax.set(title=f'Confusion at epoch: {epoch}')
         os.makedirs(f"outputs/{model_name}/confusion/", exist_ok=True)
         ax.figure.savefig(f"outputs/{model_name}/confusion/{epoch}.png")
         plt.clf()
