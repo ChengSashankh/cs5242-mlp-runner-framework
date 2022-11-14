@@ -36,7 +36,8 @@ class Analytics:
 
     @staticmethod
     def create_animated_gifs(model_name):
-        images = [Image.open(image) for image in sorted(glob.glob(f"outputs/{model_name}/confusion/*.png"))]
+        sort_fn = lambda x: int(os.path.basename(x).split('/')[-1].split('.')[0])
+        images = [Image.open(image) for image in sorted(glob.glob(f"outputs/{model_name}/confusion/*.png"), key=sort_fn)]
         images[0].save(f"outputs/{model_name}/confusion/confusion.gif", format="GIF", append_images=images,
                        save_all=True, duration=len(images) / 2, loop=0)
 
@@ -69,12 +70,14 @@ class Analytics:
         plt.clf()
 
     @staticmethod
-    def show_train_val_test_stats(y_train, y_test, y_val):
+    def show_train_val_test_stats(y_train, y_test, y_val, logger):
         ytr, yva, yte = np.array(y_train).astype(int), np.array(y_val).astype(int), np.array(y_test).astype(int)
-        print (np.unique(ytr, return_counts=True))
-        print (np.unique(yva, return_counts=True))
-        print (np.unique(yte, return_counts=True))
-
+        logger.log("Train statistics")
+        logger.log(np.unique(ytr, return_counts=True))
+        logger.log("Validation statistics")
+        logger.log(np.unique(yva, return_counts=True))
+        logger.log("Test statistics")
+        logger.log(np.unique(yte, return_counts=True))
 
     @staticmethod
     def acc_by_class(Y_shuffled, Y_preds, model_name):
