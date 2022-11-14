@@ -69,7 +69,7 @@ class SimpleMLPTextClassifier(BasicDeepLearner):
     def _training(self, train_x, train_y, optim):
         losses = []
         # for X, Y in zip(torch.Tensor(train_x), torch.Tensor(train_y)):
-        for row in range(train_x.shape[0]):
+        for row in range(0, train_x.shape[0], self.bs):
             X = train_x[row: row+self.bs]
             Y = train_y[row: row+self.bs]
             b = X.shape[0]

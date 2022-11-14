@@ -150,10 +150,10 @@
         "comedy": 0.0
       }
     },
-        {
+    {
       "data_path": "data/data_full3.zip",
       "model_name": "first-model-batch-base-embedding-w2v-simple",
-      "structure": ["l_50_125", "d_0.3", "r", "l_125_125", "d_0.3",  "r", "l_125_150", "d_0.3", "r", "l_150_110", "d_0.3", "r", "l_110_75", "l_75_10", "s_0"],
+      "structure": ["l_300_125", "d_0.3", "r", "l_125_125", "d_0.3",  "r", "l_125_150", "d_0.3", "r", "l_150_110", "d_0.3", "r", "l_110_75", "l_75_10", "s_0"],
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 300,
@@ -168,7 +168,7 @@
     {
       "data_path": "data/data_full3.zip",
       "model_name": "first-model-batch-base-embedding-w2v-tfidf",
-      "structure": ["l_50_125", "d_0.3", "r", "l_125_125", "d_0.3",  "r", "l_125_150", "d_0.3", "r", "l_150_110", "d_0.3", "r", "l_110_75", "l_75_10", "s_0"],
+      "structure": ["l_300_125", "d_0.3", "r", "l_125_125", "d_0.3",  "r", "l_125_150", "d_0.3", "r", "l_150_110", "d_0.3", "r", "l_110_75", "l_75_10", "s_0"],
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 300,
@@ -183,7 +183,7 @@
     {
       "data_path": "data/data_full3.zip",
       "model_name": "first-model-batch-base-embedding-ftxt-tfidf",
-      "structure": ["l_50_125", "d_0.3", "r", "l_125_125", "d_0.3",  "r", "l_125_150", "d_0.3", "r", "l_150_110", "d_0.3", "r", "l_110_75", "l_75_10", "s_0"],
+      "structure": ["l_300_125", "d_0.3", "r", "l_125_125", "d_0.3",  "r", "l_125_150", "d_0.3", "r", "l_150_110", "d_0.3", "r", "l_110_75", "l_75_10", "s_0"],
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 300,
@@ -198,7 +198,7 @@
     {
       "data_path": "data/data_full3.zip",
       "model_name": "first-model-batch-base-embedding-ftxt-simple",
-      "structure": ["l_50_125", "d_0.3", "r", "l_125_125", "d_0.3",  "r", "l_125_150", "d_0.3", "r", "l_150_110", "d_0.3", "r", "l_110_75", "l_75_10", "s_0"],
+      "structure": ["l_300_125", "d_0.3", "r", "l_125_125", "d_0.3",  "r", "l_125_150", "d_0.3", "r", "l_150_110", "d_0.3", "r", "l_110_75", "l_75_10", "s_0"],
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 300,

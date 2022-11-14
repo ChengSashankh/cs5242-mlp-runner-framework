@@ -41,7 +41,7 @@ def get_configs(config_file="config.json"):
 ####################################################################################
 
 if __name__ == "__main__":
-    configs = get_configs("config.json")
+    configs = get_configs("config_w2v.json")
 
     for idx_config, config in enumerate(configs):
         try:
