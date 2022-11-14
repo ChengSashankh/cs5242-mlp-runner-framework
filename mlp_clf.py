@@ -10,13 +10,13 @@ from log.logger import Logger
 from simple_average_classifier import SimpleMLPTextClassifier
 
 
-def run_model(structure, model_name, lr, epochs, input_dim, logger, X_train, y_train, X_val, y_val, X_test, y_test):
+def run_model(structure, model_name, lr, epochs, input_dim, batch_size, logger, X_train, y_train, X_val, y_val, X_test, y_test):
     # Define and run the model
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     loss_fn = nn.CrossEntropyLoss()
     model = SimpleMLPTextClassifier(checkpoint_freq=20, loss_fn=loss_fn,
                                     model_spec=structure, name=model_name,
-                                    sent_cleaner_conf=None, device=device, input_dim=input_dim, logger=_logger, alpha=lr)
+                                    sent_cleaner_conf=None, device=device, input_dim=input_dim, batch_size=batch_size, logger=_logger, alpha=lr)
     try:
         optim = torch.optim.Adam(model.parameters(), lr=lr)
         model.run_training(X_train, y_train, X_val, y_val, optim, epochs=epochs)
@@ -49,7 +49,7 @@ if __name__ == "__main__":
 
         dataset_reader = DatasetReader(config['embedding_type'], _logger)
         _X_train, _X_test, _y_train, _y_test, _X_val, _y_val = dataset_reader.read(config['data_path'])
-        outcome = run_model(config['structure'], config['model_name'], config['lr'], config['epochs'], config['input_dim'], _logger, _X_train, _y_train, _X_val, _y_val, _X_test, _y_test)
+        outcome = run_model(config['structure'], config['model_name'], config['lr'], config['epochs'], config['input_dim'], config['batch_size'], _logger, _X_train, _y_train, _X_val, _y_val, _X_test, _y_test)
 
         if outcome == 0:
             _logger.log ("Completed training and testing")

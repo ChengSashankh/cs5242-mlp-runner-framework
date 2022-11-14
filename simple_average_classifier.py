@@ -10,7 +10,7 @@ import torch
 
 # Model 1
 class SimpleMLPTextClassifier(BasicDeepLearner):
-    def __init__(self, checkpoint_freq, loss_fn, model_spec, name, sent_cleaner_conf, device, input_dim, logger, alpha=1e-4):
+    def __init__(self, checkpoint_freq, loss_fn, model_spec, name, sent_cleaner_conf, device, input_dim, batch_size, logger, alpha=1e-4):
         super().__init__(model_spec, alpha, input_dim)
         self.logger = logger
         self.loss_fn = loss_fn
@@ -23,6 +23,7 @@ class SimpleMLPTextClassifier(BasicDeepLearner):
         self.metrics_csv = open(f"outputs/{self.name}/metrics.csv", "w")
         self.start_time = None
         self.end_time = None
+        self.bs = batch_size
 
     def __init_csvs(self):
         self.train_csv.write("epoch,train_loss,val_loss,val_acc\n")
@@ -69,8 +70,8 @@ class SimpleMLPTextClassifier(BasicDeepLearner):
         losses = []
         # for X, Y in zip(torch.Tensor(train_x), torch.Tensor(train_y)):
         for row in range(train_x.shape[0]):
-            X = train_x[row: row+16]
-            Y = train_y[row: row+16]
+            X = train_x[row: row+self.bs]
+            Y = train_y[row: row+self.bs]
             b = X.shape[0]
             Y_preds = self.forward(X)
 

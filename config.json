@@ -7,6 +7,7 @@
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
+      "batch_size": 16,
       "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
@@ -20,6 +21,7 @@
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
+      "batch_size": 16,
       "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
@@ -33,6 +35,7 @@
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
+      "batch_size": 16,
       "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
@@ -46,6 +49,7 @@
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
+      "batch_size": 16,
       "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
@@ -59,6 +63,7 @@
       "lr": 3e-3,
       "epochs": 200,
       "input_dim": 50,
+      "batch_size": 16,
       "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
@@ -72,6 +77,7 @@
       "lr": 3e-2,
       "epochs": 200,
       "input_dim": 50,
+      "batch_size": 16,
       "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
@@ -85,6 +91,7 @@
       "lr": 3e-1,
       "epochs": 200,
       "input_dim": 50,
+      "batch_size": 16,
       "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
@@ -98,6 +105,7 @@
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
+      "batch_size": 16,
       "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,
@@ -111,6 +119,7 @@
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
+      "batch_size": 16,
       "embedding_type": "glove-wiki-gigaword-100",
       "down_sample": {
         "drama": 0.0,
@@ -124,6 +133,7 @@
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
+      "batch_size": 16,
       "embedding_type": "glove-wiki-gigaword-300",
       "down_sample": {
         "drama": 0.0,
