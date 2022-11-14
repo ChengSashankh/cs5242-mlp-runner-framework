@@ -106,14 +106,14 @@ class Analytics:
         return accuracies
 
     @staticmethod
-    def plot_value_counts(df: pandas.DataFrame, model_name):
+    def plot_value_counts(df: pandas.DataFrame, model_name, split):
         Analytics.create_dirs_if_not_present(model_name)
         plt.clf()
         plt.title("Frequencies by class")
         plt.xlabel("Frequency")
         plt.ylabel("Classes")
         df['genre'].value_counts().plot(kind="barh")
-        plt.savefig(f"outputs/{model_name}/value_counts.png", bbox_inches="tight")
+        plt.savefig(f"outputs/{model_name}/{split}_value_counts.png", bbox_inches="tight")
         plt.clf()
 
     @staticmethod

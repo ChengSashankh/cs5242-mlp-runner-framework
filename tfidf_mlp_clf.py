@@ -48,7 +48,7 @@ if __name__ == "__main__":
         _logger = Logger(f"{OUTPUT_DIR}/{config['model_name']}", LOGFILE, "tfidf_mlp_clf.py")
 
         dataset_reader = DatasetReader(config['embedding_type'], _logger)
-        _X_train, _X_test, _y_train, _y_test, _X_val, _y_val = dataset_reader.read(config['data_path'], simple=False)
+        _X_train, _X_test, _y_train, _y_test, _X_val, _y_val = dataset_reader.read(config['data_path'], config['simple'], config['model_name'])
         outcome = run_model(config['structure'], config['model_name'], config['lr'], config['epochs'], config['input_dim'], config['batch_size'], _logger, _X_train, _y_train, _X_val, _y_val, _X_test, _y_test)
 
         if outcome == 0:

@@ -31,7 +31,7 @@ class DatasetReader:
         self.sent_cleaner_conf = sent_cleaner_conf
         self.down_sample_conf = down_sample_conf
 
-    def read(self, path_to_zip, simple):
+    def read(self, path_to_zip, simple, model_name):
         # Reading from zip files, and storing in a dictionary with key is fim genre,
         # and value is list of films with plot
         initial_df = pd.DataFrame()
@@ -52,6 +52,7 @@ class DatasetReader:
         df = df.sample(frac=1)
 
         self.logger.log(df['genre'].value_counts())
+        Analytics.plot_value_counts(df, model_name, "full")
         if simple:
             self.logger.log("Preparing vectors using simple average")
             return self._prepare_dataset(df)

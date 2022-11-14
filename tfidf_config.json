@@ -3,11 +3,11 @@
     {
       "data_path": "data/data_full3.zip",
       "model_name": "first-model-batch-base-tfidf",
-      "structure": ["l_50_125", "d_0.3", "r", "l_125_150", "d_0.3", "r", "l_150_110", "d_0.3", "r", "l_110_75", "l_75_10", "s_0"],
+      "structure": ["l_50_75", "d_0.3", "r", "l_75_50", "d_0.3", "r", "l_50_25", "l_25_10", "s_0"],
       "lr": 3e-4,
       "epochs": 200,
       "input_dim": 50,
-      "batch_size": 32,
+      "batch_size": 1,
       "embedding_type": "glove-wiki-gigaword-50",
       "down_sample": {
         "drama": 0.0,

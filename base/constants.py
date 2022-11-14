@@ -5,7 +5,7 @@ FILMS_GENRE = [
     "drama",
     "horror",
     "romance",
-    "science_fiction", # science fiction
+    "scifi", # science fiction
     "fantasy",
     "historical",
     "crime"
@@ -18,7 +18,7 @@ TARGET_LKP = {
     "drama": 3,
     "horror": 4,
     "romance": 5,
-    "science_fiction": 6,  # science fiction
+    "scifi": 6,  # science fiction
     "fantasy": 7,
     "historical": 8,
     "crime": 9
