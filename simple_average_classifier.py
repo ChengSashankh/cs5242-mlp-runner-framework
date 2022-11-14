@@ -105,7 +105,7 @@ class SimpleMLPTextClassifier(BasicDeepLearner):
             Analytics.confusion_matrix_analysis(Y_shuffled, Y_preds, self.name, epoch_num)
 
             # Check error by class
-            Analytics.acc_by_class(Y_shuffled, Y_preds, self.name)
+            Analytics.acc_by_class(Y_shuffled, Y_preds, self.name, epoch_num)
 
             self.train_csv.write(f"{epoch_num},{train_loss},{torch.tensor(losses).mean()},{accuracy_score(Y_shuffled.detach().numpy(), Y_preds.detach().numpy())}\n")
             self.train_csv.flush()

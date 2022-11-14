@@ -44,15 +44,22 @@ if __name__ == "__main__":
     configs = get_configs("config.json")
 
     for idx_config, config in enumerate(configs):
-        print(f"Starting with model {idx_config}: {config['model_name']}")
-        os.makedirs(f"outputs/{config['model_name']}", exist_ok=True)
-        _logger = Logger(f"{OUTPUT_DIR}/{config['model_name']}", LOGFILE, "mlp_clf.py")
+        try:
+            print(f"Starting with model {idx_config}: {config['model_name']}")
+            os.makedirs(f"outputs/{config['model_name']}", exist_ok=True)
+            _logger = Logger(f"{OUTPUT_DIR}/{config['model_name']}", LOGFILE, "mlp_clf.py")
 
-        dataset_reader = DatasetReader(config['embedding_type'], _logger)
-        _X_train, _X_test, _y_train, _y_test, _X_val, _y_val = dataset_reader.read(config['data_path'], config['simple'], config['model_name'])
-        outcome = run_model(config['structure'], config['model_name'], config['lr'], config['epochs'], config['input_dim'], config['batch_size'], _logger, _X_train, _y_train, _X_val, _y_val, _X_test, _y_test)
+            dataset_reader = DatasetReader(config['embedding_type'], _logger)
+            _X_train, _X_test, _y_train, _y_test, _X_val, _y_val = dataset_reader.read(config['data_path'], config['simple'], config['model_name'])
+            outcome = run_model(config['structure'], config['model_name'], config['lr'], config['epochs'], config['input_dim'], config['batch_size'], _logger, _X_train, _y_train, _X_val, _y_val, _X_test, _y_test)
 
-        if outcome == 0:
-            _logger.log ("Completed training and testing")
-        else:
-            _logger.log ("Failed")
+            if outcome == 0:
+                _logger.log ("Completed training and testing")
+            else:
+                _logger.log ("Failed")
+        except KeyboardInterrupt as ke:
+            print("Interrupted - quitting")
+            exit(1)
+        except Exception as e:
+            print (e)
+            print("Failed the previous run. Trying the next")

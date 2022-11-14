@@ -80,9 +80,10 @@ class Analytics:
         logger.log(np.unique(yte, return_counts=True))
 
     @staticmethod
-    def acc_by_class(Y_shuffled, Y_preds, model_name):
+    def acc_by_class(Y_shuffled, Y_preds, model_name, epoch_num):
+        os.makedirs(f"outputs/{model_name}/acc_by_class/", exist_ok=True)
         Analytics.create_dirs_if_not_present(model_name)
-        truth = np.array(Y_shuffled, dtype=int)
+        truth = np.array(Y_shuffled, dtype=int).reshape(-1)
         preds = np.array(Y_preds, dtype=int)
 
         is_correct = (truth == preds).astype(int)
@@ -92,16 +93,16 @@ class Analytics:
         for cat in range(len(FILMS_GENRE)):
             ind = np.where(truth == cat)
             total = len(ind[0]) + 1e-8
-            correct = np.sum(is_correct[ind])
+            correct = np.sum(is_correct[ind[0]])
 
             accuracies.append(correct / total)
 
         plt.clf()
-        plt.title("Accuracies by class")
+        plt.title(f"Accuracies by class - epoch-{epoch_num}")
         plt.barh(FILMS_GENRE, accuracies)
         plt.xlabel("Classes")
         plt.ylabel("Accuracy")
-        plt.savefig(f"outputs/{model_name}/acc_by_class.png")
+        plt.savefig(f"outputs/{model_name}/acc_by_class/{epoch_num}.png")
         plt.clf()
         return accuracies
 
