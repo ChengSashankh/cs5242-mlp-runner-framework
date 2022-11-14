@@ -43,7 +43,7 @@ def get_configs(config_file="config.json"):
 if __name__ == "__main__":
     configs = get_configs("config.json")
 
-    for idx_config, config in enumerate(configs):
+    for idx_config, config in enumerate(configs[-2:]):
         os.makedirs(f"outputs/{config['model_name']}", exist_ok=True)
         _logger = Logger(f"{OUTPUT_DIR}/{config['model_name']}", LOGFILE, "mlp_clf.py")
 
