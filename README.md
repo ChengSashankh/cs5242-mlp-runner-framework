@@ -2,7 +2,15 @@
 
 We had to try a series of deep learning architectures in a class I took at NUS. So I created a simple framework to run Fully Connected Networks for my Deep Learning class without writing code. I wrote configurations to create and run a network, and even do hyper-paramter search.
 
-It saved me a lot of time - with reusable code for plots like train and validation loss so I don't have to write all that stuff everytime!
+Whats in it?
+ - Model architecture as configuration (for FCN)
+ - Logging
+ - Reusable code for plots
+ - Confusion matrix as a GIF through training to visualize classification learning
+ - Use gensim embeddings by name
+ - Natural Language pre-processing using `nltk`
+
+It uses pytorch modules.
 
 ## Example 
 
